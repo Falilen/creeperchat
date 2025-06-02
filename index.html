@@ -77,12 +77,18 @@
 
   <!-- DeadSimpleChat Embed -->
   <script src="https://cdn.deadsimplechat.com/sdk/v1/dsc-sdk.min.js"></script> 
-  <script>
-    window.DSC_SDK.init({
-      roomId: "2M01ZptIl", // Замените на ваш ID комнаты
-      containerId: "chat-container",
-      theme: "light"
-    });
-  </script>
+  <script defer>
+  window.addEventListener('load', () => {
+    if (window.DSC_SDK) {
+      window.DSC_SDK.init({
+        roomId: "2M01ZptIl",
+        containerId: "chat-container",
+        theme: "light"
+      });
+    } else {
+      console.error('DeadSimpleChat SDK не загружен');
+    }
+  });
+</script>
 </body>
 </html>
