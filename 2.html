@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чат в одном файле</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .chat-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    #chat-log {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      background: #fafafa;
+      border-radius: 5px;
+    }
+    #chat-log li {
+      margin: 5px 0;
+      padding: 8px;
+      background: #e0e0e0;
+      border-radius: 5px;
+      max-width: 80%;
+    }
+    #chat-form {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    #message-input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 8px 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <h2>Мой Чат</h2>
+    <ul id="chat-log"></ul>
+    <form id="chat-form">
+      <input type="text" id="message-input" placeholder="Введите сообщение..." required />
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <!-- DeadSimpleChat Embed -->
+  <script src="https://cdn.deadsimplechat.com/sdk/v1/dsc-sdk.min.js"></script> 
+  <script>
+    window.DSC_SDK.init({
+      roomId: "2M01ZptIl", // Замените на ваш ID комнаты
+      containerId: "chat-container",
+      theme: "light"
+    });
+  </script>
+</body>
+</html>
